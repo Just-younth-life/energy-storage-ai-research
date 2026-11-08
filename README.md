@@ -1,6 +1,8 @@
 # energy-storage-ai-research
 A AI research product for electrochemical energy storage industry chain, support company credibility rating, China-overseas benchmark comparison, external shock transmission simulation, all conclusions traceable with evidence_id. Demo with mock MCP data, not investment advice.
+⚠️全部为Mock模拟数据，**不构成任何投资建议**
 
+## 📁仓库目录
 energy-storage-ai-research/
 ├── README.md                     # 仓库总说明、部署、演示脚本
 ├── PROJECT_SPEC.md               # 任务一：完整项目设计大纲

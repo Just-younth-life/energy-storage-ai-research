@@ -3,25 +3,40 @@ A AI research product for electrochemical energy storage industry chain, support
 
 ⚠️全部为Mock模拟数据，**不构成任何投资建议**
 
+## 🎯项目简介
+投研分析师辅助AI产品：
+1. 电化学储能产业链分层、标的归属识别，区分真实业务标的与蹭概念炒作标的；
+2. 中外储能企业对标，输出可比/不可比维度；
+3. 外部事件推演冲击传导链路：事件 → 产业链环节 → 公司业务 → 财务指标；
+4. **全部关键结论evidence_id证据可溯源，LLM仅做文本抽取，业务规则全部硬编码规避幻觉风险。**
+   
 ## 📁仓库目录
 ```
 energy-storage-ai-research/
-├── README.md                     # 仓库总说明、部署、演示脚本
-├── PROJECT_SPEC.md               # 任务一：完整项目设计大纲
-├── 测试用例说明.md                # 测试：主链路/异常/合规边界
-├── AI_使用与验证记录.md           # AI调用校验记录
-├── main.py                       # FastAPI后端入口
-├── schemas.py                    # Pydantic Schema + 枚举定义
-├── mcp_mock.py                   # Mock扶摇、iFinD MCP工具调用
-├── llm_wrapper.py                # LLM封装 + jsonl分片审计日志
-├── web.py                        # Streamlit Web前端（可操作产品页面）
-├── review_helper.py               # 审计日志人工复核辅助脚本
+├── README.md                     # ✅【仓库根目录】总览、快速上手、跳转文档，面试官打开仓库直接展示
+├── docs/                         # 📂笔试完整交付文档集（详细设计、测试、AI记录）
+│   ├── PROJECT_SPEC.md           # 任务一完整项目设计大纲
+│   ├── 测试用例说明.md            # 测试用例集合：主链路/异常/合规边界
+│   └── AI_使用与验证记录.md       # AI调用审计、人工复核记录模板
+├── src/                          # 📂业务源码目录
+│   ├── main.py                   # FastAPI 后端服务入口
+│   ├── schemas.py                # Pydantic 全部数据Schema、枚举定义
+│   ├── mcp_mock.py               # Mock实现扶摇MCP / iFinD MCP
+│   ├── llm_wrapper.py            # LLM调用封装、日志分片落盘逻辑
+│   ├── web.py                    # Streamlit Web交互前端
+│   └── review_helper.py          # ai_records 人工复核辅助脚本
+├── runtime_output/               # 📂程序运行自动生成输出目录
+│   └── ai_records/               # 按日期分片审计日志（仅本地运行生成，git忽略*.jsonl，只提交空目录）
 ├── .env.example                  # 环境变量模板
 ├── .gitignore                    # git忽略配置
-└── ai_records/                   # 自动生成：按日期分片审计日志
-    └── ai_records_20261108.jsonl
-```
+└── requirements.txt              # Python依赖清单
 
+```
+## 📁仓库文档导航
+> 详细设计规格、测试用例、AI校验记录全部在 `docs/` 文件夹
+- [项目完整设计大纲（任务一）](./docs/PROJECT_SPEC.md)
+- [测试用例说明（主链路 / 异常 / 合规边界）](./docs/测试用例说明.md)
+- [AI 使用与验证记录](./docs/AI_使用与验证记录.md)
 
 ## 🎯目标用户
 投研分析师，完成：

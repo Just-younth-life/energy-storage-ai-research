@@ -125,6 +125,24 @@ pip install fastapi uvicorn pydantic openai python‑dotenv streamlit
 10. .env.example、.gitignore
 11. ai_records/ 运行后自动生成 AI 审计日志
 
+## 🛠快速启动
+```bash
+# 1.安装全部依赖
+pip install -r requirements.txt
+
+# 2.配置环境变量
+cp .env.example .env
+# 编辑.env填入 DEEPSEEK_API_KEY
+
+# 3.启动FastAPI后端
+python src/main.py
+
+# 4.启动Streamlit Web前端
+streamlit run src/web.py
+
+# 5.审计日志人工复核工具
+python src/review_helper.py
+```
 ## 合规声明
 
 > 

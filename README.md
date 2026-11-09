@@ -102,28 +102,21 @@ pip install fastapi uvicorn pydantic openai python‑dotenv streamlit
 4. 启动 Web 前端：`streamlit run web.py`
 5. 人工复核审计日志：`python review_helper.py`
 
-## 🎬演示视频脚本（60‑180s，建议 145s）
+## 项目启动&访问地址
+> ⚠️本项目为本地运行Demo，**无外网公网部署**，需要在本机启动前后端服务之后访问。
 
-1. 0‑15s：开场白，项目背景，说明全部 Mock 模拟，不构成投资建议；介绍双层可信度、证据溯源核心设计。
-2. 15‑50s：演示【产业链查询】；展示 L4 真实业务标的、L1 山东章鼓 / 国机通用蹭概念标的；展示信源等级、证据类型；**展示产业链归属绑定 evidence_id 溯源 ID**；演示 D 级股吧传闻不会拉高业务可信度。
-3. 50‑88s：演示【中外公司对比】阳光电源 vs Fluence；输出可比 / 不可比维度，结论绑定 evidence_id。
-4. 88‑115s：演示【外部冲击传导推演】，选择事件 “美国 IRA 储能补贴收紧”；展示事件信源等级、传导链路、置信度、生效前置条件。
-5. 115‑132s：演示红旗预警触发（R01 单源、R03 高可信证据冲突自动降级）。
-6. 132‑145s：打开仓库说明`ai_records_*.jsonl`审计日志；展示`review_helper.py`人工复核脚本；口述已知边界，风险显性化收尾。
+1. 启动FastAPI后端：
+```powershell
+python src/main.py
+```
+后端服务地址：`http://127.0.0.1:8000`
 
-## 📋交付物清单
+2. 新开终端启动 Streamlit 前端 Web 页面：
+python -m streamlit run src/web.py
 
-1. main.py FastAPI 后端入口
-2. schemas.py 全部 Pydantic Schema、枚举定义
-3. mcp_mock.py 扶摇 MCP /iFinD MCP 模拟实现
-4. llm_wrapper.py LLM 封装，强制日志落盘、日志分片
-5. web.py Streamlit Web 前端（可直接操作 Web 产品）
-6. review_helper.py 审计日志人工复核辅助脚本
-7. PROJECT_SPEC.md 任务一完整项目大纲
-8. AI_使用与验证记录.md AI 调用校验记录
-9. 测试用例说明.md 主链路、接口异常、合规边界测试说明
-10. .env.example、.gitignore
-11. ai_records/ 运行后自动生成 AI 审计日志
+👉 Web 工作台访问 URL：[http://127.0.0.1:8501](http://127.0.0.1:8501)
+>
+> 说明：该地址仅本机可访问；拿到本仓库源码，按上面步骤即可复现完整产品功能；配套演示视频已验证全部主链路、异常边界效果。
 
 ## 🛠快速启动
 ```bash
@@ -143,8 +136,23 @@ streamlit run src/web.py
 # 5.审计日志人工复核工具
 python src/review_helper.py
 ```
-## 合规声明
 
+## 📋交付物清单
+
+1. main.py FastAPI 后端入口
+2. schemas.py 全部 Pydantic Schema、枚举定义
+3. mcp_mock.py 扶摇 MCP /iFinD MCP 模拟实现
+4. llm_wrapper.py LLM 封装，强制日志落盘、日志分片
+5. web.py Streamlit Web 前端（可直接操作 Web 产品）
+6. review_helper.py 审计日志人工复核辅助脚本
+7. PROJECT_SPEC.md 任务一完整项目大纲
+8. AI_使用与验证记录.md AI 调用校验记录
+9. 测试用例说明.md 主链路、接口异常、合规边界测试说明
+10. .env.example、.gitignore
+11. ai_records/ 运行后自动生成 AI 审计日志
+
+
+## 合规声明
 > 
 > 本产品为笔试 Demo，全部为 Mock 模拟数据，**不构成任何投资建议**。
 
